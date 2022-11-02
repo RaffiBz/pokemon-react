@@ -1,13 +1,13 @@
-import React, { useState, useEffect, useCallback, useMemo } from "react";
+import React, { useState, useEffect } from "react";
 import Card from "../ui/Card";
 import PokemonInfo from "../global/PokemonInfo";
 import axios from "axios";
 import { Pokemon } from "../models/pokemon.model";
 
 const Main = () => {
+  const [url, setUrl] = useState<string>("https://pokeapi.co/api/v2/pokemon/");
   const [pokeData, setPokeData] = useState<Pokemon[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
-  const [url, setUrl] = useState<string>("https://pokeapi.co/api/v2/pokemon/");
   const [nextUrl, setNextUrl] = useState<string | null>();
   const [prevUrl, setPrevUrl] = useState<string | null>();
   const [pokeDex, setPokeDex] = useState<Pokemon>({
@@ -59,7 +59,7 @@ const Main = () => {
   }, [url]);
 
   return (
-    <div className="my-3">
+    <div className="py-3 ">
       <span className="text-xl font-bold">Welcome to Pokemon World!</span>
       <div className="flex w-full p-8">
         <div className="block">

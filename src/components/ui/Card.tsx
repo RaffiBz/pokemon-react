@@ -36,7 +36,7 @@ const Card: React.FC<CardProps> = ({ pokemon, loading, infoPokemon }) => {
               )
               .map((item) => (
                 <div
-                  className="flex bg-[#28a3d8] rounded-md shadow-lg px-4 items-center justify-between box-border"
+                  className="flex bg-[#28a3d8] rounded-md shadow-lg px-4 items-center justify-between box-border cursor-pointer"
                   key={item.id}
                   onClick={() => infoPokemon(item)}
                 >
